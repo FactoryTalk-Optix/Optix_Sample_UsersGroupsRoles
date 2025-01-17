@@ -1,0 +1,975 @@
+Name: Screens
+Id: g=5135680c54d4f05124c743618b64a2ee
+Type: ScreensCategoryFolder
+Children:
+- Name: UsersActions
+  Id: g=0d354ce8537e3794e20262554ffca24a
+  Supertype: Screen
+  ReferenceType: HasComponent
+  Children:
+  - Name: Width
+    Id: g=977fbaee6f5776f9a05fc31f7599fe8a
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 1280.0
+  - Name: Height
+    Id: g=e7ec099167c288ecaf845bf8f4318638
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 720.0
+  - Name: LoginForm1
+    Id: g=1fb8f09fab3ce6724c436c25073a14e1
+    Type: LoginForm
+    Children:
+    - Name: Panel
+      Id: g=d73cf6a0bfe60d622296292b32e16941
+      Type: NodePointer
+      DataType: NodeId
+      Children:
+      - Name: Kind
+        Id: g=5b8621600b2cff68e6d4299a8ec52ac9
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container"
+      - Name: ConditionalConverter1
+        Id: g=90c8418d50818ec9d92a6d990a4afc5a
+        Type: ConditionalConverter
+        Children:
+        - Name: Condition
+          Id: g=33daf5d34b9658f05ce9fd2a6b5e51fd
+          Type: BaseDataVariableType
+          DataType: Boolean
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=1d05568bc5206f8d0f0b43d73841a37d
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "{Session}/LoggedIn"
+        - Name: FalseValue
+          Id: g=3806980d45f64d674aa6e516ab295711
+          Type: BaseDataVariableType
+          DataType: NodeId
+          ReferenceType: HasParameter
+          Value: "/Objects/Optix_Sample_UsersGroupsRoles/UI/LoginForm/LoginFormComponents/Login"
+          Children:
+          - Name: KeyValueConverter1
+            Id: g=02bcb8264577d511ab588b6fabf0eaba
+            Type: ValueMapConverter
+            Children:
+            - Name: Source
+              Id: g=bc94b84f29ff4ee907882cf6907fd44d
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=60487fc014385872ebab0480cf688c65
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "/Objects/Optix_Sample_UsersGroupsRoles/Authentication/AuthenticationMode"
+    - Name: CurrentPanel
+      Id: g=bf2cb146fbd608f7631dcd0c05e83de1
+      Type: NodePointer
+      DataType: NodeId
+      AccessLevel: Read
+      Children:
+      - Name: Kind
+        Id: g=7334565df48d8552ecb7844dd5f62250
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item"
+    - Class: Reference
+      Target: ns=3;i=478
+      Direction: Forward
+    - Name: Users
+      Id: g=26ed31e035cfbadbcd6d6fb312ddc409
+      Type: NodePointer
+      DataType: NodeId
+      Value: "/Objects/Optix_Sample_UsersGroupsRoles/Security/Users"
+      Children:
+      - Name: Kind
+        Id: g=dea66c9e33511d0694cb57e2e44c4eac
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/ObjectTypes/BaseObjectType/FolderType"
+    - Name: PanelAliasNode
+      Id: g=5deee1d0179fb76439f71213ebc8a874
+      Type: BaseDataVariableType
+      DataType: NodeId
+      ValueRank: ScalarOrOneDimension
+      Children:
+      - Name: DynamicLink
+        Id: g=e059b2befbfa5cef874657c87961d317
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../Users@NodeId"
+    - Name: LeftMargin
+      Id: g=382af4d9073828c83adc6290417decdc
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 10.0
+    - Name: TopMargin
+      Id: g=3c4e60c467481351b49f380b8e29ef74
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 10.0
+  - Name: Label1
+    Id: g=238c16a808bb6c3dcd1301ccdfc77612
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=1aa8f301dd96d60a12ca656fd6c03a25
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      ModellingRule: Optional
+      Value: {"LocaleId":"en-US","Text":"Group1:"}
+    - Name: LeftMargin
+      Id: g=b10956fcf8d5407a6bf2494fbf1317d9
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 335.0
+    - Name: TopMargin
+      Id: g=5134387a65f2ed7c83c614261fef355f
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 20.0
+  - Name: LED1
+    Id: g=bd72cad70ca95f7ca9e49fe61b94233b
+    Type: Led
+    Children:
+    - Name: Active
+      Id: g=2fedcb98124cfa3cb6f67623a1de3e1f
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Children:
+      - Name: DynamicLink
+        Id: g=5cd355e0f59443f23a2c47804b55c36b
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "{Session}/Groups/Group1"
+    - Name: Width
+      Id: g=6a28968b1e29ba03c2f5206b10aaecd2
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 40.0
+    - Name: Height
+      Id: g=aa945dd32db1053d9dbf6845f4b99f84
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 40.0
+    - Name: LeftMargin
+      Id: g=71b814698f1199c89dd03cac504f017b
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 390.0
+    - Name: TopMargin
+      Id: g=237d0a29fe9f81b6b9ec307bb46101c5
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 10.0
+    - Name: Color
+      Id: g=aed9c0c6139da3497f3c2cbdd0dbeb8b
+      Type: BaseDataVariableType
+      DataType: Color
+      ModellingRule: Optional
+      Value: "#00ff00"
+  - Name: Label2
+    Id: g=6b8c14e41d6414fd8da513b1c075c37f
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=3818b4533b400aed9bd934876f22b787
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      ModellingRule: Optional
+      Value: {"LocaleId":"en-US","Text":"Group2:"}
+    - Name: LeftMargin
+      Id: g=9925bb4fb7f0b6c4ff88ff47586f560a
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 335.0
+    - Name: TopMargin
+      Id: g=b2d314d3bb12d174ad8fa2f73b5d8df0
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 70.0
+  - Name: LED2
+    Id: g=4b85c7d4a696fafdf1904c8b70e548ad
+    Type: Led
+    Children:
+    - Name: Active
+      Id: g=7223da7671212a8148b2e5592ba88a9c
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Children:
+      - Name: DynamicLink
+        Id: g=90930ec5afc116fbb55c5893bb33d5eb
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "{Session}/Groups/Group2"
+    - Name: Width
+      Id: g=7a9ef30d9cbb823d5cebc821f1b58676
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 40.0
+    - Name: Height
+      Id: g=63ec7154465d159418e3fa38f2e5d091
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 40.0
+    - Name: LeftMargin
+      Id: g=80e2c8a4f7dec129a9d1c5f59c05672a
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 390.0
+    - Name: TopMargin
+      Id: g=790dd751dd3e8aecb1264b8b0c3a53fb
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 60.0
+    - Name: Color
+      Id: g=9f5c817d795338e3790aa2e7b0efe541
+      Type: BaseDataVariableType
+      DataType: Color
+      ModellingRule: Optional
+      Value: "#00ff00"
+  - Name: Label3
+    Id: g=d8d94d95c938d595bb9a3d5951ec7baa
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=1b6720a45bd332e8b9a569463f0ce384
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      ModellingRule: Optional
+      Value: {"LocaleId":"en-US","Text":"Group2:"}
+    - Name: LeftMargin
+      Id: g=43277e662b0e22ce9c5c4428d22dbc58
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 335.0
+    - Name: TopMargin
+      Id: g=63fcbdc02cbe6ec9eb8519018384cb61
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 120.0
+  - Name: LED3
+    Id: g=bf36734fe696f61ccd65b1bdf07709ad
+    Type: Led
+    Children:
+    - Name: Active
+      Id: g=64f60856a823349b8a5dc3dc50bf70ac
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Children:
+      - Name: DynamicLink
+        Id: g=bef36a667edcd10ede1284572f7ec494
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "{Session}/Groups/Group3"
+    - Name: Width
+      Id: g=3797525ed01c032189410805310c8264
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 40.0
+    - Name: Height
+      Id: g=b008d4910192bef501033c147aa1c491
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 40.0
+    - Name: LeftMargin
+      Id: g=8268854e4301efc084516151a503e420
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 390.0
+    - Name: TopMargin
+      Id: g=bd75e671f2146f70f043684c64b28889
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 110.0
+    - Name: Color
+      Id: g=636f3ef1b5cefaa3b7c6bc7f8c12c2eb
+      Type: BaseDataVariableType
+      DataType: Color
+      ModellingRule: Optional
+      Value: "#00ff00"
+  - Name: Label4
+    Id: g=b7a75cb53ed62be8d2f11eb52bb511ae
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=3614ed84d8dc6798115d3c864a77d6b0
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      ModellingRule: Optional
+      Value: {"LocaleId":"en-US","Text":"Role1:"}
+    - Name: LeftMargin
+      Id: g=1a6f708aecdfdb8bd05ae0445de332af
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 515.0
+    - Name: TopMargin
+      Id: g=0fee565b64bb95202620140484814ecc
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 20.0
+  - Name: LED4
+    Id: g=597514872aaa2a51478cc3708a05284e
+    Type: Led
+    Children:
+    - Name: Active
+      Id: g=1b998ba213882f1d4bd72f17c76584e5
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Children:
+      - Name: DynamicLink
+        Id: g=dced6564d259a66737e8572a0c1eebaf
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "{Session}/Roles/Role1"
+    - Name: Width
+      Id: g=bb42886e0e07bd751183f6a551a859ff
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 40.0
+    - Name: Height
+      Id: g=50c3b8508c7567f298e25774acb8b4ee
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 40.0
+    - Name: LeftMargin
+      Id: g=0c6741abe4f925bbaeecc8332ed694de
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 570.0
+    - Name: TopMargin
+      Id: g=e42019fb658cbdf5247c58f274e89377
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 10.0
+    - Name: Color
+      Id: g=e107dd08a04b71aa1c642cc305c6851a
+      Type: BaseDataVariableType
+      DataType: Color
+      ModellingRule: Optional
+      Value: "#00ff00"
+  - Name: Label5
+    Id: g=edd929679a83217381d48a0a96366ba0
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=18bd07451ee6aadc50854585d9e06e3b
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      ModellingRule: Optional
+      Value: {"LocaleId":"en-US","Text":"Role2:"}
+    - Name: LeftMargin
+      Id: g=06b627ac53465dd0d51156b6a62996dc
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 515.0
+    - Name: TopMargin
+      Id: g=7c39bb833de620f7bb9fccac5f422cd0
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 70.0
+  - Name: LED5
+    Id: g=2476ff511244bf97538ade9fdd45bb70
+    Type: Led
+    Children:
+    - Name: Active
+      Id: g=5b38d0257ad9d2428f0adf87953b8036
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Children:
+      - Name: DynamicLink
+        Id: g=1f7fa493ab89f8b3517553372e00df0e
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "{Session}/Roles/Role2"
+    - Name: Width
+      Id: g=c6d489599dc9c531e48218e5a6fac3a5
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 40.0
+    - Name: Height
+      Id: g=ac54a019f6cb5a471d8e84f51d72ed6e
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 40.0
+    - Name: LeftMargin
+      Id: g=d3c30f9f7bfe91911a9a752f34a9d34a
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 570.0
+    - Name: TopMargin
+      Id: g=67ae7a8318b5c6ff8557412c8cf5557d
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 60.0
+    - Name: Color
+      Id: g=69835fce914a530254011298db63e561
+      Type: BaseDataVariableType
+      DataType: Color
+      ModellingRule: Optional
+      Value: "#00ff00"
+  - Name: Label6
+    Id: g=e1c00ac4d9177fe2e20a3d89324fd9f8
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=16172391ce27e35e309d817d0504ea84
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      ModellingRule: Optional
+      Value: {"LocaleId":"en-US","Text":"Role3:"}
+    - Name: LeftMargin
+      Id: g=23b92e67220d8cba424b2f9d3a370c52
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 515.0
+    - Name: TopMargin
+      Id: g=0f45fc6278d85c76336a7190b6f8ad21
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 120.0
+  - Name: LED6
+    Id: g=d6283ea81b7fc0d1314bd33de634ba92
+    Type: Led
+    Children:
+    - Name: Active
+      Id: g=4e8411b8505bab86591656d141c2888b
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Children:
+      - Name: DynamicLink
+        Id: g=fc8759b8c03ea63a235ec61d7fe47dbf
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "{Session}/Roles/Role3"
+    - Name: Width
+      Id: g=e50abcb5b3a6af840d22b04a94a41768
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 40.0
+    - Name: Height
+      Id: g=ef930c0fd13c140cd70623cd45a8e651
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 40.0
+    - Name: LeftMargin
+      Id: g=8605e88cb79215531d20ffcb3ab17252
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 570.0
+    - Name: TopMargin
+      Id: g=122900327a02d863d221afc0809932aa
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 110.0
+    - Name: Color
+      Id: g=4fa756cc5d51e9173898b17800810364
+      Type: BaseDataVariableType
+      DataType: Color
+      ModellingRule: Optional
+      Value: "#00ff00"
+- Name: UsersEditor
+  Id: g=77747da1bbb3a9d1e37e3a2f8f9a15d0
+  Supertype: Screen
+  ReferenceType: HasComponent
+  Children:
+  - Name: UserEditorOverview1
+    Id: g=c7d5297258a241e9c588548fe2f2ff9f
+    Type: UserEditorOverview
+    Children:
+    - Name: Users
+      Id: g=f84ea938d4d117f3b40c4395ff5c2440
+      Type: Alias
+      DataType: NodeId
+      Value: "/Objects/Optix_Sample_UsersGroupsRoles/Security/Users"
+      Children:
+      - Name: Kind
+        Id: g=445b0e40063721ba9f4bec361322cb9b
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/ObjectTypes/BaseObjectType/FolderType/CategoryFolder/UsersCategoryFolder"
+    - Name: Groups
+      Id: g=2ca4b67e16722d71e84e67a78a55bf48
+      Type: Alias
+      DataType: NodeId
+      Value: "/Objects/Optix_Sample_UsersGroupsRoles/Security/Groups"
+      Children:
+      - Name: Kind
+        Id: g=3bc0f79dc2cd9333369d2fdf6c75b984
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/ObjectTypes/BaseObjectType/FolderType/CategoryFolder/GroupsCategoryFolder"
+    - Name: VisibilityPanel
+      Id: g=9d7f2b6967726172079e7194a885a663
+      Type: Panel
+      Children:
+      - Name: HorizontalLayout1
+        Id: g=d70253e383cb68276dabcaeb8fd7b67f
+        Type: RowLayout
+        Children:
+        - Name: UsersList
+          Id: g=97111f21da78207eb253aed2bdbad8f7
+          Type: ListBox
+          Children:
+          - Class: Reference
+            Target: ns=3;i=481
+            Direction: Forward
+          - Name: Model
+            Id: g=a4f9bb791d9d3c712ec87f7a8a7320c1
+            Type: NodePointer
+            DataType: NodeId
+            Children:
+            - Name: ItemKind
+              Id: g=6fba8044244309d5dc391141f35e1462
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType/UserType"
+            - Name: Kind
+              Id: g=4f97c6be73fea45b707c5d462eb2e76d
+              Type: PropertyType
+              DataType: NodeId
+            - Name: DynamicLink
+              Id: g=c348f83110d7b17a53294ab32077958a
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{Users}@NodeId"
+          - Name: SelectedValue
+            Id: g=4b07401d6a0a66fa880eac8b35576d56
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+          - Name: SelectedItem
+            Id: g=23eb4f30c00bd435213773d67b1ab62c
+            Type: NodePointer
+            DataType: NodeId
+            Children:
+            - Name: Kind
+              Id: g=3495eebe8d5f4ac4deb846bbef4aa277
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType/UserType"
+          - Name: Item
+            Id: g=afcd48f6eb9849f2a47df05e86da8c9f
+            Type: Alias
+            DataType: NodeId
+            Children:
+            - Name: Kind
+              Id: g=e7e44a92b5d0c2173642a7069d3e7728
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType/UserType"
+          - Name: ChildrenCounter
+            Id: g=27377db8110aaa9ebfbd20c5a8bc41cf
+            Type: NetLogic
+            Children:
+            - Name: Count
+              Id: g=b9be4d48a03f9e5d949d1a568ea6a234
+              Type: BaseDataVariableType
+              DataType: Int32
+            - Name: Node
+              Id: g=26f4ebf18c4bed25f6401ad7908a85a0
+              Type: BaseDataVariableType
+              DataType: NodeId
+              Children:
+              - Name: DynamicLink
+                Id: g=48928aa582eac0c87fb5ed0484dff052
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "{Users}@NodeId"
+          - Name: UISelectedItem
+            Id: g=a7080228c88b3009a5187f6b72b5ad2f
+            Type: BaseDataVariableType
+            DataType: NodeId
+            AccessLevel: Read
+          - Name: UISelectedValue
+            Id: g=3b795f2b9076addc5da274fb6594dad4
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            AccessLevel: Read
+        - Name: UserEditorPanelLoader
+          Id: g=abb2dd063ccafac61eadd1760efb6e0d
+          Type: PanelLoader
+          Children:
+          - Class: Reference
+            Target: ns=3;i=478
+            Direction: Forward
+          - Name: Panel
+            Id: g=723a3352d359d156305a44eea6759eab
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/Optix_Sample_UsersGroupsRoles/UI/UserEditor/EditUserDetailPanel"
+            Children:
+            - Name: Kind
+              Id: g=d916100a762854cdcaef7658c55be9f9
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container"
+          - Name: CurrentPanel
+            Id: g=d591359b215e58037417086d7e58d876
+            Type: NodePointer
+            DataType: NodeId
+            Children:
+            - Name: Kind
+              Id: g=2c7b82624b15d71947ad25cc57e513c2
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item"
+          - Name: PanelAliasNode
+            Id: g=2b8e647e54ad13e4c506e128668c04e6
+            Type: BaseDataVariableType
+            DataType: NodeId
+            ValueRank: ScalarOrOneDimension
+            Children:
+            - Name: DynamicLink
+              Id: g=d57877e23c6624d5df0d19f906ee2061
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../UsersList/SelectedItem@Pointer@Value"
+          - Name: UserEditorPanelLoaderLogic
+            Id: g=267e963efce2f1468565319838b6b1f4
+            Type: NetLogic
+            Children:
+            - Name: UserCount
+              Id: g=4bc2758c326724eb54a39eebf1eb0113
+              Type: BaseDataVariableType
+              DataType: Int32
+              Children:
+              - Name: DynamicLink
+                Id: g=4cd20c59daef15d708162ef380194ae4
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../UsersList/ChildrenCounter/Count"
+            - Name: NoUsersPanel
+              Id: g=924d1f28e402f86ecdd30c24d6cc0e85
+              Type: NodePointer
+              DataType: NodeId
+              Value: "/Objects/Optix_Sample_UsersGroupsRoles/UI/UserEditor/NoUsersPanel"
+              Children:
+              - Name: Kind
+                Id: g=c60a4d9956196592261f00d9641aa24f
+                Type: PropertyType
+                DataType: NodeId
+            - Name: UserDetailPanel
+              Id: g=ecd3f760096842a8a03bef7a6babcd09
+              Type: NodePointer
+              DataType: NodeId
+              Value: "/Objects/Optix_Sample_UsersGroupsRoles/UI/UserEditor/EditUserDetailPanel"
+              Children:
+              - Name: Kind
+                Id: g=4bf9ac8c88ce1695cb5fc7c8cf8a3479
+                Type: PropertyType
+                DataType: NodeId
+            - Class: Reference
+              Target: g=6c27ea6c7300df6bda0f2fb1ad9d25ad
+              Direction: Forward
+      - Name: HorizontalLayout2
+        Id: g=fcfbb5c6457355568a6f600bef467135
+        Type: RowLayout
+        Children:
+        - Name: CreateUserButton
+          Id: g=6c5330155d6b3bda6c4b16cc7284d6d1
+          Type: Button
+          Children:
+          - Name: EventHandler1
+            Id: g=9bc72e588c01e908d319ffb73dd5b1c8
+            Type: EventHandler
+            Children:
+            - Name: ListenEventType
+              Id: g=0e061780762b87be400d5e44dd49f257
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
+            - Name: MethodsToCall
+              Id: g=5118508d8d25e9c353b676ef614f496d
+              Type: BaseObjectType
+              Children:
+              - Name: MethodContainer1
+                Id: g=0796b4cba9891bad312b1f62a488e6f0
+                Type: BaseObjectType
+                Children:
+                - Name: ObjectPointer
+                  Id: g=2755fd1e54c63f8db36d8733536f12cf
+                  Type: NodePointer
+                  DataType: NodeId
+                  Children:
+                  - Name: Kind
+                    Id: g=82352400d9228ebef64363e556c0ba24
+                    Type: PropertyType
+                    DataType: NodeId
+                    Value: "/Types/ObjectTypes/BaseObjectType"
+                  - Name: DynamicLink
+                    Id: g=a870c9278981c5b3a3a5e23833d198be
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "{UserEditorPanelLoader}@NodeId"
+                - Name: Method
+                  Id: g=c1acba53c02dcc614ff5af407dbf0a2f
+                  Type: BaseDataVariableType
+                  DataType: String
+                  Value: "ChangePanel"
+                - Name: InputArguments
+                  Id: g=6cfcac6d0d9bc3c0aa080d04c412ccd8
+                  Type: BaseObjectType
+                  Children:
+                  - Name: NewPanel
+                    Id: g=a564c0c34d9833450e46e752058258c2
+                    Type: BaseDataVariableType
+                    DataType: NodeId
+                    Value: "/Objects/Optix_Sample_UsersGroupsRoles/UI/UserEditor/CreateUserPanel"
+                  - Name: AliasNode
+                    Id: g=31e27e295ec80de219d3ec7ee4749b99
+                    Type: BaseDataVariableType
+                    DataType: NodeId
+                    ValueRank: ScalarOrOneDimension
+            - Name: EventArguments
+              Id: g=61ed8457b7881e1eac5f74cc54c1ff75
+              Type: MouseClickEvent
+              Children:
+              - Name: EventId
+                Id: g=f9a592d4e887d4cf92d4e92438d81ecb
+                Type: PropertyType
+                DataType: ByteString
+              - Name: EventType
+                Id: g=876b852841e3f8d4d05d7a1fd9098e01
+                Type: PropertyType
+                DataType: NodeId
+              - Name: SourceNode
+                Id: g=a0f2a336ca4e56114f8f23e317b66b55
+                Type: PropertyType
+                DataType: NodeId
+              - Name: SourceName
+                Id: g=d6b133132ecb06500ba8be7d98f4b214
+                Type: PropertyType
+                DataType: String
+              - Name: Time
+                Id: g=dcd0828475399986a8bd00fc8c13635b
+                Type: PropertyType
+                DataType: UtcTime
+              - Name: ReceiveTime
+                Id: g=15a5d92a1de43cf93162d6c3a2e11f6d
+                Type: PropertyType
+                DataType: UtcTime
+              - Name: Message
+                Id: g=737b2c9610e58e15a3e1abe415de3cf5
+                Type: PropertyType
+                DataType: LocalizedText
+              - Name: Severity
+                Id: g=b14b24c69cf00de084cbfd8be26f2cda
+                Type: PropertyType
+                DataType: UInt16
+        - Name: DeleteUserButton
+          Id: g=b07cdf75e056a8ec3cdf1a091a81274e
+          Type: Button
+          Children:
+          - Name: DeleteUserButtonLogic
+            Id: g=494360fbb30e0dc179037d626297b144
+            Type: NetLogic
+            Children:
+            - Class: Reference
+              Target: g=c5d767e297e6371913b1fa20128cc501
+              Direction: Forward
+          - Name: EventHandler1
+            Id: g=e7d1936ce8009b1b0a4351120feef60b
+            Type: EventHandler
+            Children:
+            - Name: ListenEventType
+              Id: g=753e5f128872b7fcd498195054ccb69e
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
+            - Name: MethodsToCall
+              Id: g=ff60a856c873eae26533c915e1d62f16
+              Type: BaseObjectType
+              Children:
+              - Name: MethodContainer1
+                Id: g=0e865138068a7730fdfc7139df2269f3
+                Type: BaseObjectType
+                Children:
+                - Name: ObjectPointer
+                  Id: g=8a96634c9993e2825e24a8901016ef1a
+                  Type: NodePointer
+                  DataType: NodeId
+                  Children:
+                  - Name: Kind
+                    Id: g=0b331430b3b824e6c56078b7f80cfda9
+                    Type: PropertyType
+                    DataType: NodeId
+                    Value: "/Types/ObjectTypes/BaseObjectType"
+                  - Name: DynamicLink
+                    Id: g=bbd553ad37c93b8960dc6bd4fd0504cf
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../DeleteUserButtonLogic@NodeId"
+                - Name: Method
+                  Id: g=5612a9774eec572c99efe56428119fab
+                  Type: BaseDataVariableType
+                  DataType: String
+                  Value: "DeleteUser"
+                - Name: InputArguments
+                  Id: g=a49ffa7892ecf1ed49d7a6f3c0f6e35f
+                  Type: BaseObjectType
+                  Children:
+                  - Name: userToDelete
+                    Id: g=0159d35a9b604dda7938f4dcdd1130b4
+                    Type: BaseDataVariableType
+                    DataType: NodeId
+                    Children:
+                    - Name: DynamicLink
+                      Id: g=3b2fcd301b23e62f41e0af407d045eb2
+                      Type: DynamicLink
+                      DataType: NodePath
+                      Value: "../../../../../../../HorizontalLayout1/UsersList/SelectedItem@NodeId"
+              - Name: MethodContainer2
+                Id: g=68b1de30a300f83c02aa7b51eb2c41d5
+                Type: BaseObjectType
+                Children:
+                - Name: ObjectPointer
+                  Id: g=743404a6a09217e136ecf81704185481
+                  Type: NodePointer
+                  DataType: NodeId
+                  Children:
+                  - Name: Kind
+                    Id: g=c12f43791faf996e4bf823a452831a14
+                    Type: PropertyType
+                    DataType: NodeId
+                    Value: "/Types/ObjectTypes/BaseObjectType"
+                  - Name: DynamicLink
+                    Id: g=1e6625c23dea28c2cd632d95fac99969
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "{UserEditorPanelLoader}/UserEditorPanelLoaderLogic@NodeId"
+                - Name: Method
+                  Id: g=41595e3db835cbf93aead4eb818ba2d2
+                  Type: BaseDataVariableType
+                  DataType: String
+                  Value: "GoToUserDetailsPanel"
+                - Name: InputArguments
+                  Id: g=550a4c8faf225a12b810b68e288d25d0
+                  Type: BaseObjectType
+                  Children:
+                  - Name: user
+                    Id: g=d150633dc88e3249df1f047b7ca169f6
+                    Type: BaseDataVariableType
+                    DataType: NodeId
+                    Children:
+                    - Name: DynamicLink
+                      Id: g=de129209881e2fd23db30136990d7290
+                      Type: DynamicLink
+                      DataType: NodePath
+                      Value: "../../../../../../../HorizontalLayout1/UsersList/SelectedItem@NodeId"
+            - Name: EventArguments
+              Id: g=01cf9180554c19d84682e1dd87870bfb
+              Type: MouseClickEvent
+              Children:
+              - Name: EventId
+                Id: g=de0450d64d3e98382c51ab02bf1d4f7e
+                Type: PropertyType
+                DataType: ByteString
+              - Name: EventType
+                Id: g=40721fd85c3e99bc8df3a4a39e5b00f6
+                Type: PropertyType
+                DataType: NodeId
+              - Name: SourceNode
+                Id: g=d8f2913fbd42cb5bd5dc57a65d033a80
+                Type: PropertyType
+                DataType: NodeId
+              - Name: SourceName
+                Id: g=e84699d895ddbebb06ca3e70ee34f660
+                Type: PropertyType
+                DataType: String
+              - Name: Time
+                Id: g=45a5cde46f54ecc243d171ca874ee44d
+                Type: PropertyType
+                DataType: UtcTime
+              - Name: ReceiveTime
+                Id: g=5d5caa0ba2e5135c7c105420b01243d6
+                Type: PropertyType
+                DataType: UtcTime
+              - Name: Message
+                Id: g=5db738c8befdf3ce3b67c45b39a9d29d
+                Type: PropertyType
+                DataType: LocalizedText
+              - Name: Severity
+                Id: g=325a9680f37d5800f6583d78aa31bf00
+                Type: PropertyType
+                DataType: UInt16
+    - Name: HorizontalAlignment
+      Id: g=2650376f502dd31d693c8bec416a354e
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 3
+    - Name: VerticalAlignment
+      Id: g=b02cf18228b233cb4e91273ed83f1081
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+      Value: 3
+    - Name: Roles
+      Id: g=f300d24df83ee375ba5b06285e9e216c
+      Type: Alias
+      DataType: NodeId
+      Value: "/Objects/Optix_Sample_UsersGroupsRoles/Security/Roles"
+      Children:
+      - Name: Kind
+        Id: g=ed245331b3891c43487311daa259f34f
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/ObjectTypes/BaseObjectType/FolderType/CategoryFolder/RolesCategoryFolder"
+  - Name: Width
+    Id: g=7965119a0b63c0477809841a27f40b01
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 1280.0
+  - Name: Height
+    Id: g=c8032ac144526be9f78edb98fd6bca87
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 720.0

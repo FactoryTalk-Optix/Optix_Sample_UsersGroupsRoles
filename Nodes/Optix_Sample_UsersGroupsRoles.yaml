@@ -1,0 +1,82 @@
+Name: Optix_Sample_UsersGroupsRoles
+Id: g=685e343d2445aa9f67c5d61f7d8199f5
+Type: ProjectFolder
+Children:
+- Name: Localization
+  Id: g=c341275bd62495bea562d00361f80019
+  Type: PropertyGroup
+  Children:
+  - Name: Locales
+    Id: g=f4e6fe7ea39f54444067110a6a847075
+    Type: BaseDataVariableType
+    DataType: LocaleId
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+    Value: ["en-US"]
+  - Name: LocaleFallbackList
+    Id: g=2d0ab2108abed2497bce294ac8314198
+    Type: BaseDataVariableType
+    DataType: LocaleId
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+    Value: ["en-US"]
+- Name: Authentication
+  Id: g=c2887451cb9f1ea9998bc5b894d17a17
+  Type: PropertyGroup
+  Children:
+  - Name: DefaultUserFolder
+    Id: g=2aba17956386ab7feb655d958f22c424
+    Type: NodePointer
+    DataType: NodeId
+    Value: "/Objects/Optix_Sample_UsersGroupsRoles/Security/Users"
+    Children:
+    - Name: Kind
+      Id: g=2855dadbddaf9535a241bc127b400e19
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Types/ObjectTypes/BaseObjectType/FolderType"
+  - Name: AuthenticationMode
+    Id: g=d0de74cfe851814ecb30ec7815d45435
+    Type: BaseDataVariableType
+    DataType: AuthenticationMode
+- Name: PasswordPolicy
+  Id: g=cbe104fcef7c355bad218c426f088836
+  Type: PasswordPolicy
+  Children:
+  - Name: MaximumPasswordAge
+    Id: g=c890964b8c2825c3c9ed1062013089bf
+    Type: BaseDataVariableType
+    DataType: UInt16
+  - Name: EnforcePasswordHistory
+    Id: g=428fd665641e69c0ba71ee1447ff7a33
+    Type: BaseDataVariableType
+    DataType: Byte
+    Value: 1
+  - Name: MinimumPasswordAge
+    Id: g=44a00ac2b4594b2de1221104eda8dd1b
+    Type: BaseDataVariableType
+    DataType: UInt16
+  - Name: MinimumPasswordLength
+    Id: g=ea1b9206db933bed3d78451b1a741930
+    Type: BaseDataVariableType
+    DataType: Byte
+    Value: 8
+- Name: AlarmConfiguration
+  Id: g=6e2d1d0e541c49c7df775b877dee4ac6
+  Type: PropertyGroup
+- File: UI/UI.yaml
+- File: Model/Model.yaml
+- File: Converters/Converters.yaml
+- File: Alarms/Alarms.yaml
+- File: Recipes/Recipes.yaml
+- File: Loggers/Loggers.yaml
+- File: DataStores/DataStores.yaml
+- File: Reports/Reports.yaml
+- File: 'OPC-UA/OPC-UA.yaml'
+- File: MQTT/MQTT.yaml
+- File: CommDrivers/CommDrivers.yaml
+- File: NetLogic/NetLogic.yaml
+- File: Security/Security.yaml
+- File: System/System.yaml
+- File: Translations/Translations.yaml
+- File: Retentivity/Retentivity.yaml
